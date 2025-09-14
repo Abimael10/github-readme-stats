@@ -23,6 +23,10 @@ export default async (req, res) => {
     res.setHeader("Access-Control-Allow-Headers", "Content-Type, User-Agent");
     return res.status(200).end();
   }
+
+  if (!process.env.PAT_1) {
+    return res.status(401).json({ error: "No PAT_1 environment variable found" });
+  }
   
   const {
     username,

@@ -2,13 +2,19 @@
   "functions": {
     "api/*.js": {
       "memory": 128,
-      "maxDuration": 10
+      "maxDuration": 10,
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Cache-Control": "public, max-age=1800"
+      }
     }
   },
   "redirects": [
     {
       "source": "/",
-      "destination": "https://github.com/anuraghazra/github-readme-stats"
+      "destination": "https://github.com/abimael10/github-readme-stats"
     }
   ]
 }

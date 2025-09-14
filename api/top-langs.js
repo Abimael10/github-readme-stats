@@ -11,6 +11,19 @@ import { fetchTopLanguages } from "../src/fetchers/top-languages.js";
 import { isLocaleAvailable } from "../src/translations.js";
 
 export default async (req, res) => {
+  console.log('Request headers:', req.headers);
+  console.log('Request method:', req.method);
+  console.log('User agent:', req.headers['user-agent']);
+  console.log('Authorization header:', req.headers.authorization);
+
+  // Handle OPTIONS requests
+  if (req.method === 'OPTIONS') {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, User-Agent");
+    return res.status(200).end();
+  }
+  
   const {
     username,
     hide,

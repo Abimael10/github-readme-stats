@@ -35,6 +35,9 @@ export default async (req, res) => {
     hide_progress,
   } = req.query;
   res.setHeader("Content-Type", "image/svg+xml");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   if (blacklist.includes(username)) {
     return res.send(

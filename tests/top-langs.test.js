@@ -228,7 +228,7 @@ describe("Test /api/top-langs", () => {
       "Cache-Control",
       `max-age=${CONSTANTS.TOP_LANGS_CACHE_SECONDS / 2}, s-maxage=${
         CONSTANTS.TOP_LANGS_CACHE_SECONDS
-      }`,
+      }, stale-while-revalidate=${CONSTANTS.ONE_DAY}`,
     );
   });
 });

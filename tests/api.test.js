@@ -212,7 +212,7 @@ describe("Test /api/", () => {
         "Cache-Control",
         `max-age=${CONSTANTS.ERROR_CACHE_SECONDS / 2}, s-maxage=${
           CONSTANTS.ERROR_CACHE_SECONDS
-        }, stale-while-revalidate=${CONSTANTS.ONE_DAY}`,
+        }, stale-while-revalidate=${CONSTANTS.ERROR_CACHE_SECONDS}`,
       ],
     ]);
   });
